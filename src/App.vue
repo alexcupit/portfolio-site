@@ -1,8 +1,10 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView, useRoute } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 import AboutMe from "./components/AboutMe.vue";
+import Projects from "./components/Projects.vue";
 </script>
 
 <template>
@@ -19,9 +21,13 @@ import AboutMe from "./components/AboutMe.vue";
     </div>
   </header> -->
 
-  <!-- <RouterView /> -->
   <Header />
-  <AboutMe />
+  <RouterView />
+  <RouterView name="Projects" />
+  <Footer />
+
+  <!-- <AboutMe /> -->
+  <!-- <Projects /> -->
 </template>
 
 <style scoped>

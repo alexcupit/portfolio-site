@@ -8,6 +8,7 @@ import Footer from "./components/Footer.vue";
   <Header />
   <RouterView />
   <RouterView name="Projects" />
+  <RouterView name="TechStack" />
   <Footer />
 </template>
 

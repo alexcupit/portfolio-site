@@ -3,6 +3,7 @@ import ProjectView from "../views/ProjectView.vue";
 import NotFound from "../views/NotFound.vue";
 import AboutMe from "../components/AboutMe.vue";
 import Projects from "../components/Projects.vue";
+import TechStack from "../components/TechStack.vue";
 import { projects } from "../projects";
 
 const guards = {
@@ -22,12 +23,17 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      components: { default: AboutMe, Projects },
+      components: { default: AboutMe, Projects, TechStack },
     },
     {
       path: "/projects",
       name: "projects",
-      components: { default: AboutMe, Projects },
+      components: { default: AboutMe, Projects, TechStack },
+    },
+    {
+      path: "/tech-stack",
+      name: "tech-stack",
+      components: { default: AboutMe, Projects, TechStack },
     },
     {
       path: "/projects/:projectName",
@@ -43,10 +49,9 @@ const router = createRouter({
         top: 0,
         behavior: "smooth",
       };
-    } else if (to.fullPath.includes("#item")) {
+    } else if (to.path === "/tech-stack") {
       return {
-        // el: "#app",
-        // selector: "#app",
+        el: "#tech-stack",
         top: 0,
         behavior: "smooth",
       };

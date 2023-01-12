@@ -14,7 +14,7 @@ defineProps({
       v-motion-pop-visible-once
       class="btn btn-ghost normal-case hover:bg-base-100 font-normal h-min text-left"
     >
-      <div class="card w-96 bg-base-100 shadow-xl m-5 h-96">
+      <div class="card w-80 md:w-96 bg-base-100 shadow-xl m-5 h-96">
         <figure>
           <img
             class="object-fill h-40 w-full"

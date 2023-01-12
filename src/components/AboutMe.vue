@@ -3,10 +3,13 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <div class="hero min-h-screen" style="background-image: url('/mam-tor.jpeg')">
+  <div
+    class="hero min-h-screen max-w-full"
+    style="background-image: url('/mam-tor.jpeg')"
+  >
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
-      <div class="max-w-lg flex flex-col items-center">
+      <div class="max-w-md flex flex-col items-center">
         <div class="avatar">
           <div
             class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
@@ -28,14 +31,12 @@ import { RouterLink } from "vue-router";
           forward to combining my new skills with my experience of working in
           digital marketing and communications.
         </p>
-        <div class="flex mx-5 my-10 md:mt-5 md:mb-5">
+        <div class="fex-col items-center mx-5 my-5 md:mt-5 md:mb-5 md:flex-row">
           <RouterLink to="/projects">
-            <button class="btn btn-primary lowercase mx-5 w-32">
-              Projects
-            </button>
+            <button class="btn btn-primary lowercase m-5 w-32">Projects</button>
           </RouterLink>
           <RouterLink to="/tech-stack">
-            <button class="btn btn-primary lowercase mx-5 w-32">
+            <button class="btn btn-primary lowercase m-5 w-32">
               Tech Stack
             </button>
           </RouterLink>

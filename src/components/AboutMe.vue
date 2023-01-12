@@ -11,7 +11,7 @@ import { RouterLink } from "vue-router";
           <div
             class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
           >
-            <img src="me-cropped.jpeg" />
+            <img src="@/../public/me-cropped.jpeg" />
           </div>
         </div>
         <br />

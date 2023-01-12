@@ -1,6 +1,5 @@
-import { createRouter, createWebHistory, useRoute } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import KnowItAll from "../components/KnowItAll.vue";
+import { createRouter, createWebHistory } from "vue-router";
+import ProjectView from "../views/ProjectView.vue";
 import AboutMe from "../components/AboutMe.vue";
 import Projects from "../components/Projects.vue";
 
@@ -11,40 +10,39 @@ const router = createRouter({
       path: "/",
       name: "home",
       components: { default: AboutMe, Projects },
-      // children: [
-      //   { path: "", component: Projects },
-      // ...other sub routes
-      // ],
     },
     {
       path: "/projects",
       name: "projects",
       components: { default: AboutMe, Projects },
-      // children: [{ path: "", component: Projects }],
-
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      // component: () => import("../views/AboutView.vue"),
-      // component: AboutMe,
     },
     {
-      path: "/projects/know-it-all",
-      name: "know-it-all",
-      component: KnowItAll,
+      path: "/projects/:projectName",
+      name: "Project",
+      component: ProjectView,
     },
   ],
-  // scrollBehavior(to, from, savedPosition) {
-  //   // always scroll 10px above the element #main
-  //   // useRoute();
-  //   return {
-  //     // could also be
-  //     el: document.getElementById("projects"),
-  //     // el: "#projects",
-  //     top: -10,
-  //     behavior: "smooth",
-  //   };
-  // },
+  scrollBehavior(to, from, savedPosition) {
+    if (to.path === "/projects") {
+      return {
+        el: "#projects",
+        top: 0,
+        behavior: "smooth",
+      };
+    } else if (to.fullPath.includes("#item")) {
+      return {
+        // el: "#app",
+        // selector: "#app",
+        top: 0,
+        behavior: "smooth",
+      };
+    } else {
+      return {
+        top: 0,
+        behavior: "smooth",
+      };
+    }
+  },
 });
 
 export default router;

@@ -1,14 +1,5 @@
 <script setup>
-// import Projects from "./Projects.vue";
-import { RouterLink, RouterView, useRoute } from "vue-router";
-
-useRoute();
-
-const scrollToProjects = () => {
-  document
-    .getElementById("projects")
-    .scrollIntoView({ behavior: "smooth", block: "start" });
-};
+import { RouterLink } from "vue-router";
 </script>
 
 <template>
@@ -38,9 +29,7 @@ const scrollToProjects = () => {
           digital marketing and communications.
         </p>
         <RouterLink to="/projects">
-          <button class="btn btn-primary" @click="scrollToProjects">
-            Projects
-          </button>
+          <button class="btn btn-primary">Projects</button>
         </RouterLink>
       </div>
     </div>

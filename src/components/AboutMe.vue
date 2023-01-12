@@ -11,7 +11,7 @@ import { RouterLink } from "vue-router";
           <div
             class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
           >
-            <img src="@/../public/me-cropped.jpeg" />
+            <img src="/me-cropped.jpeg" />
           </div>
         </div>
         <br />
@@ -22,13 +22,13 @@ import { RouterLink } from "vue-router";
           where I thoroughly enjoyed learning new techonologies at a fast pace
           and combining these skills with creative projects.
         </p>
-        <p class="mb-5">
+        <p class="mb-10">
           Before I found software development, I gained many years of
           professional experience working in the charity sector. I’m now looking
           forward to combining my new skills with my experience of working in
           digital marketing and communications.
         </p>
-        <div class="flex mx-5">
+        <div class="flex mx-5 my-10 md:mt-5 md:mb-5">
           <RouterLink to="/projects">
             <button class="btn btn-primary lowercase mx-5 w-32">
               Projects

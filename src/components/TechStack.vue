@@ -1,5 +1,6 @@
 <script setup>
 let techStack = [
+  "JavaScript",
   "TypeScript",
   "Jest",
   "Node.js",
@@ -11,7 +12,9 @@ let techStack = [
   "Vue.js",
   "Svelte",
   "Tailwind",
+  "Firebase",
   "git",
+  "netlify",
 ];
 </script>
 

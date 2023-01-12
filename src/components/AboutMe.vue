@@ -28,9 +28,18 @@ import { RouterLink } from "vue-router";
           forward to combining my new skills with my experience of working in
           digital marketing and communications.
         </p>
-        <RouterLink to="/projects">
-          <button class="btn btn-primary">Projects</button>
-        </RouterLink>
+        <div class="flex mx-5">
+          <RouterLink to="/projects">
+            <button class="btn btn-primary lowercase mx-5 w-32">
+              Projects
+            </button>
+          </RouterLink>
+          <RouterLink to="/tech-stack">
+            <button class="btn btn-primary lowercase mx-5 w-32">
+              Tech Stack
+            </button>
+          </RouterLink>
+        </div>
       </div>
     </div>
   </div>

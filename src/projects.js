@@ -62,7 +62,7 @@ export const projects = [
     projectName: "NC News Backend",
     slug: "nc-news-be",
     shortDesc:
-      "An API to interact with a PostgreSQL database faturing news articles",
+      "An API to interact with a PostgreSQL database featuring news articles, votes and comments",
     longDesc:
       "This restful API features multiple endpoints for interacting with a PostgreSQL database. The API is designed to allow multiple queries on certain endpoints to display the data as per the request, all while protecting from SQL injection.\n\nI really enjoyed working on this project for a week during the bootcamp, using test driven development to ensure the server responds as expected with robust error handling too.",
     cardImage: "/nc-news-be/homepage.png",

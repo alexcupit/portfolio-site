@@ -53,10 +53,10 @@ const toTop = (e) => {
     <h2 class="text-5xl font-bold mb-5">{{ projectName }}</h2>
     <p>{{ shortDesc }}</p>
     <a v-if="productionURL" target="_blank" :href="productionURL">
-      <button class="btn mx-1 sm:mx-5 mt-5">See it in action</button>
+      <button class="btn mx-1 sm:mx-5 mt-5 lowercase">See it in action</button>
     </a>
     <a v-if="githubURL" target="_blank" :href="githubURL">
-      <button class="btn mx-1 sm:mx-5 mt-5">See the code</button>
+      <button class="btn mx-1 sm:mx-5 mt-5 lowercase">See the code</button>
     </a>
   </div>
   <div

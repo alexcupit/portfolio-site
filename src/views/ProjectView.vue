@@ -1,9 +1,11 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { projects } from "../projects";
+import NotFound from "./NotFound.vue";
 
 let currProject = useRoute().params.projectName;
 let projDetails = projects.filter((project) => project.slug === currProject);
+
 let {
   projectName,
   shortDesc,

@@ -22,7 +22,7 @@ import { RouterLink } from "vue-router";
         <p class="mb-5">
           I'm Alex, a Junior Software Developer based in the Peak District. I've
           recently graduated from the Northcoders Software Developer bootcamp
-          where I thoroughly enjoyed learning new techonologies at a fast pace
+          where I thoroughly enjoyed learning new technologies at a fast pace
           and combining these skills with creative projects.
         </p>
         <p class="mb-10">

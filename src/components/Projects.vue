@@ -1,6 +1,18 @@
 <script setup>
+import { ref, onBeforeMount } from "vue";
+import { fetchProjectsFromAirTable } from "../../api";
 import ProjectCard from "./ProjectCard.vue";
-import { projects } from "../projects";
+// import { projects } from "../projects-manual";
+
+const projects = ref([]);
+
+onBeforeMount(() => {
+  fetchProjectsFromAirTable().then((res) => {
+    console.log(res, "res");
+    projects.value = res;
+    console.log(projects);
+  });
+});
 </script>
 
 <template>

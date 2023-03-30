@@ -20,10 +20,10 @@ import { RouterLink } from "vue-router";
         <br />
         <h1 class="mb-5 text-5xl font-bold">hello there</h1>
         <p class="mb-5">
-          I'm Alex, a Junior Software Developer based in the Peak District. I've
-          recently graduated from the Northcoders Software Developer bootcamp
-          where I thoroughly enjoyed learning new technologies at a fast pace
-          and combining these skills with creative projects.
+          I'm Alex, a Junior Software Developer based in the Peak District. I'm
+          a graduate from the Northcoders Software Developer bootcamp where I
+          thoroughly enjoyed learning new technologies at a fast pace and
+          combining these skills with creative projects.
         </p>
         <p class="mb-10">
           Before I found software development, I gained many years of

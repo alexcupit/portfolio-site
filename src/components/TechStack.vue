@@ -1,11 +1,15 @@
 <script setup>
-let techStack = [
+const techStack = [
   "JavaScript",
   "TypeScript",
-  "Jest",
   "Node.js",
+  "Python",
+  "Azure",
+  "AWS",
   "PostgreSQL",
   "MongoDB",
+  "Docker",
+  "Jest",
   "HTML5",
   "CSS",
   "React",
@@ -14,7 +18,7 @@ let techStack = [
   "Tailwind",
   "Firebase",
   "git",
-  "netlify",
+  // "netlify",
 ];
 </script>
 

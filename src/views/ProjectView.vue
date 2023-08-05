@@ -1,20 +1,29 @@
 <script setup>
 import { useRoute } from "vue-router";
-import { projects } from "../projects";
-import NotFound from "./NotFound.vue";
 
-let currProject = useRoute().params.projectName;
-let projDetails = projects.filter((project) => project.slug === currProject);
+const currProject = useRoute().params.projectName;
 
-let {
-  projectName,
-  shortDesc,
-  longDesc,
-  images,
-  techStack,
-  githubURL,
-  productionURL,
-} = projDetails[0];
+const props = defineProps(["projects"]);
+
+const projDetails = props.projects.filter(
+  (project) => project.slug === currProject
+);
+
+console.log(props.projects, "props");
+
+const [
+  {
+    projectName,
+    shortDesc,
+    longDesc,
+    images,
+    techStack,
+    githubURL,
+    productionURL,
+  },
+] = projDetails;
+
+const imageURls = images.map((image) => image.url);
 
 const toTop = (e) => {
   setTimeout(() => {
@@ -27,7 +36,7 @@ const toTop = (e) => {
   <div class="flex flex-col items-center pt-5 bg-primary">
     <div class="carousel carousel-center max-w-md max-h-fit space-x-4">
       <div
-        v-for="(src, i) in images"
+        v-for="(src, i) in imageURLs"
         :id="`item${i + 1}`"
         class="carousel-item relative w-full"
       >

@@ -2,16 +2,13 @@
 import { ref, onBeforeMount } from "vue";
 import { fetchProjectsFromAirTable } from "../../api";
 import ProjectCard from "./ProjectCard.vue";
-// import { projects } from "../projects-manual";
 
 const projects = ref([]);
 
-onBeforeMount(() => {
-  fetchProjectsFromAirTable().then((res) => {
-    console.log(res, "res");
-    projects.value = res;
-    console.log(projects);
-  });
+onBeforeMount(async () => {
+  projects.value = await fetchProjectsFromAirTable();
+
+  console.log(projects.value);
 });
 </script>
 
@@ -31,7 +28,7 @@ onBeforeMount(() => {
         :project-name="project.projectName"
         :slug="project.slug"
         :short-desc="project.shortDesc"
-        :card-image="project.cardImage"
+        :card-image="project.images[0].url"
         :labels="project.labels"
       ></ProjectCard>
     </div>

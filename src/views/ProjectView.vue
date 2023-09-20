@@ -23,7 +23,7 @@ const [
   },
 ] = projDetails;
 
-const imageURls = images.map((image) => image.url);
+const imageURLs = images.map((image) => image.url);
 
 const toTop = (e) => {
   setTimeout(() => {

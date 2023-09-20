@@ -28,7 +28,11 @@ defineProps({
             {{ shortDesc }}
           </p>
           <div class="card-actions justify-end">
-            <div v-for="label in labels" class="badge badge-primary">
+            <div
+              v-for="(label, i) in labels"
+              :key="`${label}-${i}`"
+              class="badge badge-primary"
+            >
               {{ label }}
             </div>
           </div>

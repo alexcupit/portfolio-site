@@ -30,7 +30,11 @@ let techStack = [
   </div>
 
   <div class="bg-primary flex flex-wrap justify-center pb-5">
-    <div v-for="tech in techStack" class="card w-32 bg-base-100 shadow-xl m-1">
+    <div
+      v-for="(tech, i) in techStack"
+      :key="`${tech}-${i}`"
+      class="card w-32 bg-base-100 shadow-xl m-1"
+    >
       <figure class="px-1 pt-1">
         <img :src="`/tech-stack/${tech}.svg`" :alt="tech" class="rounded-xl" />
       </figure>

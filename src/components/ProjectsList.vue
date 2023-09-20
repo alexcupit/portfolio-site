@@ -15,7 +15,8 @@ import { projects } from "../projects";
     </div>
     <div id="proj-container" class="flex flex-wrap justify-center">
       <ProjectCard
-        v-for="project in projects"
+        v-for="(project, i) in projects"
+        :key="`${project}-${i}`"
         :project-name="project.projectName"
         :slug="project.slug"
         :short-desc="project.shortDesc"

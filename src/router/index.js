@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import ProjectView from "../views/ProjectView.vue";
 import NotFound from "../views/NotFound.vue";
 import AboutMe from "../components/AboutMe.vue";
-import Projects from "../components/Projects.vue";
+import ProjectsList from "../components/ProjectsList.vue";
 import TechStack from "../components/TechStack.vue";
 import { projects } from "../projects";
 
@@ -23,17 +23,17 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      components: { default: AboutMe, Projects, TechStack },
+      components: { default: AboutMe, ProjectsList, TechStack },
     },
     {
       path: "/projects",
       name: "projects",
-      components: { default: AboutMe, Projects, TechStack },
+      components: { default: AboutMe, ProjectsList, TechStack },
     },
     {
       path: "/tech-stack",
       name: "tech-stack",
-      components: { default: AboutMe, Projects, TechStack },
+      components: { default: AboutMe, ProjectsList, TechStack },
     },
     {
       path: "/projects/:projectName",
@@ -42,7 +42,7 @@ const router = createRouter({
       beforeEnter: guards.checkProject,
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to) {
     if (to.path === "/projects") {
       return {
         el: "#projects",

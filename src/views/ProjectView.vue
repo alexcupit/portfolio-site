@@ -1,7 +1,6 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { projects } from "../projects";
-import NotFound from "./NotFound.vue";
 
 let currProject = useRoute().params.projectName;
 let projDetails = projects.filter((project) => project.slug === currProject);
@@ -11,12 +10,12 @@ let {
   shortDesc,
   longDesc,
   images,
-  techStack,
+  // techStack,
   githubURL,
   productionURL,
 } = projDetails[0];
 
-const toTop = (e) => {
+const toTop = () => {
   setTimeout(() => {
     window.scroll(0, 0);
   }, 0.1);
@@ -28,7 +27,7 @@ const toTop = (e) => {
     <div class="carousel carousel-center max-w-md max-h-fit space-x-4">
       <div
         v-for="(src, i) in images"
-        :id="`item${i + 1}`"
+        :key="`item${i + 1}`"
         class="carousel-item relative w-full"
       >
         <img

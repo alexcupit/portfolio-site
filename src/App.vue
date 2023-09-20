@@ -1,15 +1,15 @@
 <script setup>
 import { RouterView } from "vue-router";
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+import HeaderBlock from "./components/HeaderBlock.vue";
+import FooterBlock from "./components/FooterBlock.vue";
 </script>
 
 <template>
-  <Header />
+  <HeaderBlock />
   <RouterView />
   <RouterView name="Projects" />
   <RouterView name="TechStack" />
-  <Footer />
+  <FooterBlock />
 </template>
 
 <style scoped>

@@ -20,16 +20,17 @@ import { RouterLink } from "vue-router";
         <br />
         <h1 class="mb-5 text-5xl font-bold">hello there</h1>
         <p class="mb-5">
-          I'm Alex, a Junior Software Developer based in the Peak District. I'm
-          a graduate from the Northcoders Software Developer bootcamp where I
-          thoroughly enjoyed learning new technologies at a fast pace and
-          combining these skills with creative projects.
+          I'm Alex, a Full Stack Software Developer based in the Peak District.
+          I've worked with external clients and in internal project teams
+          covering a wide range of technologies and projects. From creating
+          engaging UIs for webapps, to designing ETL pipelines in Azure for Data
+          Engineering projects, and creating event-driven architecture in AWS.
         </p>
         <p class="mb-10">
-          Before I found software development, I gained many years of
-          professional experience working in the charity sector. I’m now looking
-          forward to combining my new skills with my experience of working in
-          digital marketing and communications.
+          I previously worked in digital marketing and communications for six
+          years in the charity sector, and enjoy combining my creative skills
+          with knack for solving problems and attention to detail to deliver
+          complex software projects.
         </p>
         <div class="fex-col items-center mx-5 my-5 md:mt-5 md:mb-5 md:flex-row">
           <RouterLink to="/projects">

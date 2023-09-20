@@ -4,11 +4,14 @@ import NotFound from "../views/NotFound.vue";
 import AboutMe from "../components/AboutMe.vue";
 import Projects from "../components/Projects.vue";
 import TechStack from "../components/TechStack.vue";
-import { projects } from "../projects";
+import { fetchProjectsFromAirTable } from "../../api";
+
+export const projects = await fetchProjectsFromAirTable();
 
 const guards = {
   checkProject: (to, from, next) => {
     if (!projects.filter((p) => p.slug === to.params.projectName).length) {
+      to.path = "/not-found";
       next({ name: "NotFound" });
     } else {
       next();
@@ -39,6 +42,7 @@ const router = createRouter({
       path: "/projects/:projectName",
       name: "Project",
       component: ProjectView,
+      props: { projects },
       beforeEnter: guards.checkProject,
     },
   ],

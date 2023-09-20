@@ -1,6 +1,6 @@
 <script setup>
 import ProjectCard from "./ProjectCard.vue";
-import { projects } from "../projects";
+import { projects } from "../router/index";
 </script>
 
 <template>
@@ -19,7 +19,7 @@ import { projects } from "../projects";
         :project-name="project.projectName"
         :slug="project.slug"
         :short-desc="project.shortDesc"
-        :card-image="project.cardImage"
+        :card-image="project.images[0].url"
         :labels="project.labels"
       ></ProjectCard>
     </div>

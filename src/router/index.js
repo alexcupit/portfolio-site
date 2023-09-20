@@ -6,7 +6,7 @@ import Projects from "../components/Projects.vue";
 import TechStack from "../components/TechStack.vue";
 import { fetchProjectsFromAirTable } from "../../api";
 
-let projects = await fetchProjectsFromAirTable();
+export const projects = await fetchProjectsFromAirTable();
 
 const guards = {
   checkProject: (to, from, next) => {
@@ -26,19 +26,16 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      props: { projects },
       components: { default: AboutMe, Projects, TechStack },
     },
     {
       path: "/projects",
       name: "projects",
-      props: { projects },
       components: { default: AboutMe, Projects, TechStack },
     },
     {
       path: "/tech-stack",
       name: "tech-stack",
-      props: { projects },
       components: { default: AboutMe, Projects, TechStack },
     },
     {

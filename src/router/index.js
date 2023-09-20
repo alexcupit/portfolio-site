@@ -6,7 +6,10 @@ import Projects from "../components/Projects.vue";
 import TechStack from "../components/TechStack.vue";
 import { fetchProjectsFromAirTable } from "../../api";
 
-const projects = await fetchProjectsFromAirTable();
+let projects;
+fetchProjectsFromAirTable().then((res) => {
+  projects = res;
+});
 
 const guards = {
   checkProject: (to, from, next) => {

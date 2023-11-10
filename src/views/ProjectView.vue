@@ -43,7 +43,7 @@ const toTop = () => {
       >
         <img
           v-bind:src="src"
-          class="object-fill w-full"
+          class="object-scale-down w-full"
           :alt="`${projectName}: ${src.split('/')[2]}`"
         />
         <div
@@ -75,6 +75,7 @@ const toTop = () => {
     <p class="whitespace-pre-wrap w-4/5 md:w-3/5">
       {{ longDesc }}
     </p>
+    <!-- specific project details -->
     <p
       v-if="projectName === 'Know It All'"
       class="whitespace-pre-wrap w-4/5 mt-5"
@@ -87,6 +88,13 @@ const toTop = () => {
         >this blog on the Northcoders website.</a
       >
     </p>
+    <div v-if="currProject === 'solaris'" class="flex flex-col items-center">
+      <p class="py-5">The original movie poster looks like this:</p>
+      <img
+        src="https://cdn.printerval.com/unsafe/960x960/assets.printerval.com/2023/03/07/6406fca2e30561.33566329.jpg"
+        class="w-2/5"
+      />
+    </div>
   </div>
 </template>
 

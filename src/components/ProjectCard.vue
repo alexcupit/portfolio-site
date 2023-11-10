@@ -15,13 +15,18 @@ defineProps({
       class="btn btn-ghost normal-case hover:bg-base-100 font-normal h-min text-left"
     >
       <div class="card w-80 md:w-96 bg-base-100 shadow-xl m-5 h-96">
-        <figure>
+        <div class="relative">
           <img
-            class="object-fill h-40 w-full"
+            class="object-fill h-40 w-full blur-md absolute"
             :src="cardImage"
             :alt="projectName"
           />
-        </figure>
+          <img
+            class="object-scale-down h-40 w-full p-2 blur-none absolute"
+            :src="cardImage"
+            :alt="projectName"
+          />
+        </div>
         <div class="card-body">
           <h3 class="card-title text-primary">{{ projectName }}</h3>
           <p>

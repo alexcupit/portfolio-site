@@ -1,15 +1,15 @@
 <script setup>
-import { useRoute } from "vue-router";
+import { useRoute } from 'vue-router';
 
 const currProject = useRoute().params.projectName;
 
-const props = defineProps(["projects"]);
+const props = defineProps(['projects']);
 
 const projDetails = props.projects.filter(
   (project) => project.slug === currProject
 );
 
-console.log(props.projects, "props");
+console.log(props.projects, 'props');
 
 const [
   {
@@ -17,7 +17,7 @@ const [
     shortDesc,
     longDesc,
     images,
-    techStack,
+    // techStack,
     githubURL,
     productionURL,
   },
@@ -25,7 +25,7 @@ const [
 
 const imageURLs = images.map((image) => image.url);
 
-const toTop = (e) => {
+const toTop = () => {
   setTimeout(() => {
     window.scroll(0, 0);
   }, 0.1);
@@ -38,6 +38,7 @@ const toTop = (e) => {
       <div
         v-for="(src, i) in imageURLs"
         :id="`item${i + 1}`"
+        :key="`item${i + 1}`"
         class="carousel-item relative w-full"
       >
         <img

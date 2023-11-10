@@ -1,18 +1,18 @@
-import { createRouter, createWebHistory } from "vue-router";
-import ProjectView from "../views/ProjectView.vue";
-import NotFound from "../views/NotFound.vue";
-import AboutMe from "../components/AboutMe.vue";
-import Projects from "../components/Projects.vue";
-import TechStack from "../components/TechStack.vue";
-import { fetchProjectsFromAirTable } from "../../api";
+import { createRouter, createWebHistory } from 'vue-router';
+import ProjectView from '../views/ProjectView.vue';
+import NotFound from '../views/NotFound.vue';
+import AboutMe from '../components/AboutMe.vue';
+import ProjectsList from '../components/ProjectsList.vue';
+import TechStack from '../components/TechStack.vue';
+import { fetchProjectsFromAirTable } from '../../api';
 
 export const projects = await fetchProjectsFromAirTable();
 
 const guards = {
   checkProject: (to, from, next) => {
     if (!projects.filter((p) => p.slug === to.params.projectName).length) {
-      to.path = "/not-found";
-      next({ name: "NotFound" });
+      to.path = '/not-found';
+      next({ name: 'NotFound' });
     } else {
       next();
     }
@@ -22,47 +22,47 @@ const guards = {
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
     {
-      path: "/",
-      name: "home",
-      components: { default: AboutMe, Projects, TechStack },
+      path: '/',
+      name: 'home',
+      components: { default: AboutMe, ProjectsList, TechStack },
     },
     {
-      path: "/projects",
-      name: "projects",
-      components: { default: AboutMe, Projects, TechStack },
+      path: '/projects',
+      name: 'projects',
+      components: { default: AboutMe, ProjectsList, TechStack },
     },
     {
-      path: "/tech-stack",
-      name: "tech-stack",
-      components: { default: AboutMe, Projects, TechStack },
+      path: '/tech-stack',
+      name: 'tech-stack',
+      components: { default: AboutMe, ProjectsList, TechStack },
     },
     {
-      path: "/projects/:projectName",
-      name: "Project",
+      path: '/projects/:projectName',
+      name: 'Project',
       component: ProjectView,
       props: { projects },
       beforeEnter: guards.checkProject,
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
-    if (to.path === "/projects") {
+  scrollBehavior(to) {
+    if (to.path === '/projects') {
       return {
-        el: "#projects",
+        el: '#projects',
         top: 0,
-        behavior: "smooth",
+        behavior: 'smooth',
       };
-    } else if (to.path === "/tech-stack") {
+    } else if (to.path === '/tech-stack') {
       return {
-        el: "#tech-stack",
+        el: '#tech-stack',
         top: 0,
-        behavior: "smooth",
+        behavior: 'smooth',
       };
     } else {
       return {
         top: 0,
-        behavior: "smooth",
+        behavior: 'smooth',
       };
     }
   },

@@ -1,23 +1,23 @@
 <script setup>
 const techStack = [
-  "JavaScript",
-  "TypeScript",
-  "Node.js",
-  "Python",
-  "Azure",
-  "AWS",
-  "PostgreSQL",
-  "MongoDB",
-  "Docker",
-  "Jest",
-  "HTML5",
-  "CSS",
-  "React",
-  "Vue.js",
-  "Svelte",
-  "Tailwind",
-  "Firebase",
-  "git",
+  'JavaScript',
+  'TypeScript',
+  'Node.js',
+  'Python',
+  'Azure',
+  'AWS',
+  'PostgreSQL',
+  'MongoDB',
+  'Docker',
+  'Jest',
+  'HTML5',
+  'CSS',
+  'React',
+  'Vue.js',
+  'Svelte',
+  'Tailwind',
+  'Firebase',
+  'git',
   // "netlify",
 ];
 </script>
@@ -34,7 +34,11 @@ const techStack = [
   </div>
 
   <div class="bg-primary flex flex-wrap justify-center pb-5">
-    <div v-for="tech in techStack" class="card w-32 bg-base-100 shadow-xl m-1">
+    <div
+      v-for="(tech, i) in techStack"
+      class="card w-32 bg-base-100 shadow-xl m-1"
+      :key="`${tech}-${i}`"
+    >
       <figure class="px-1 pt-1">
         <img :src="`/tech-stack/${tech}.svg`" :alt="tech" class="rounded-xl" />
       </figure>

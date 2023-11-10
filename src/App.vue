@@ -1,15 +1,15 @@
 <script setup>
-import { RouterView } from "vue-router";
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+import { RouterView } from 'vue-router';
+import HeaderBanner from './components/HeaderBanner.vue';
+import FooterBanner from './components/FooterBanner.vue';
 </script>
 
 <template>
-  <Header />
+  <HeaderBanner />
   <RouterView />
-  <RouterView name="Projects" />
+  <RouterView name="ProjectsList" />
   <RouterView name="TechStack" />
-  <Footer />
+  <FooterBanner />
 </template>
 
 <style scoped>
